@@ -1,0 +1,61 @@
+<input type="text" placeholder="name" [(ngModel)]="customer.name">
+<input type="text" placeholder="address" [(ngModel)]="customer.address">
+<input type="number" placeholder="salary" [(ngModel)]="customer.salary">
+<!-- <h1>{{name}}</h1> -->
+
+<input type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" value="Add customer" (click)="addcustomer()">
+
+<p>{{customer.name}}</p>
+<p>{{customer.address}}</p>
+<p>{{customer.salary}}</p>
+
+
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <caption class="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+          Our products
+          <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Browse a list of Flowbite products designed to help you work and play, stay organized, get answers, keep in touch, grow your business, and more.</p>
+      </caption>
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+              <th scope="col" class="px-6 py-3">
+                  Product title
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  category
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  image
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Price
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  <span class="sr-only">Edit</span>
+              </th>
+          </tr>
+      </thead>
+      <tbody *ngFor="let product of products; index as i">
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                 {{i+1}}&nbsp;{{product.title}}
+              </th>
+              <td class="px-6 py-4">
+                {{product.category}}
+              </td>
+              <td class="px-6 py-4">
+                <img src={{product.image}} alt="">
+
+              </td>
+              <td class="px-6 py-4">
+                  {{product.price}}$
+              </td>
+              <td class="px-6 py-4 text-right">
+                  <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
